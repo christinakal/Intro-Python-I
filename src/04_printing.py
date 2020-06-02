@@ -12,7 +12,7 @@ z = "I like turtles!"
 # y, and z:
 # x is 10, y is 2.25, z is "I like turtles!"
 
-print(f'x is % 2d, y is % 5.2f, z is "% s" ' %(x, y, z))
+print('x is % 2d, y is % 5.2f, z is "% s" ' %(x, y, z))
 
 # Use the 'format' string method to print the same thing
 print('x is {}, y is {}, z is "{}" '.format(x,round(y, 2),z))
