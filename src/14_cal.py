@@ -1,6 +1,6 @@
 """
 The Python standard library's 'calendar' module allows you to
-render a calendar to your terminal.
+render a calendar to your terminal. 
 https://docs.python.org/3.6/library/calendar.html
 
 Write a program that accepts user input of the form
@@ -30,3 +30,30 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+args = sys.argv
+print(args)
+
+month = datetime.now().month
+year = datetime.now().year
+# Month
+if len(args) == 1:
+  pass
+
+elif len(args) == 2:
+  month = int(args[1])
+# Month and year
+elif len(args) == 3:
+  month = int(args[1])
+  year = int(args[2])
+# Print error if the format is wrong
+else:
+  print("ERROR: Should be in format '14_cal.py [month] [year]'")
+  exit(0)
+if month <1 or month > 12:
+  print("ERROR: Invalid month")
+  exit(0)
+
+tc = calendar.TextCalendar()
+
+tc.prmonth(year, month)
